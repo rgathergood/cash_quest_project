@@ -26,6 +26,16 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
+  def tags()
+    sql = "SELECT tags.* FROM tags
+    INNER JOIN transactions ON tags.id = transactions.tag_id
+    WHERE tag_id = $1;"
+    values = [@id]
+    tags = SqlRunner.run(sql, values)
+    result = tags.map{|tag|Tag.new(tag)}
+    return result
+  end
+
   def self.all()
     sql = "SELECT * FROM merchants;"
     results = SqlRunner.run(sql)
