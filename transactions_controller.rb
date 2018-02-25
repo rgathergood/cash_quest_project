@@ -10,16 +10,16 @@ get '/cash-quest' do
   erb( :index )
 end
 
-get '/cash-quest/new' do
-  @merchants = Merchant.all()
-  @tags = Tag.all()
-  erb(:new)
-end
-
 post '/cash-quest' do
   @transaction = Transaction.new(params)
   @transaction.save()
   erb(:create)
+end
+
+get '/cash-quest/new' do
+  @merchants = Merchant.all()
+  @tags = Tag.all()
+  erb(:new)
 end
 
 get '/cash-quest/:id' do
@@ -38,4 +38,10 @@ post '/cash-quest/:id' do
   transaction = Transaction.new(params)
   transaction.update()
   redirect to "/cash-quest/#{params['id']}"
+end
+
+get '/cash-quest/:id/delete' do
+  @transaction = Transaction.find( params[:id].to_i )
+  @transaction.delete()
+  erb(:confirmdelete)
 end

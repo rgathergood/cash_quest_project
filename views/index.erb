@@ -7,8 +7,6 @@
     <th>Merchant</th>
     <td>|</td>
     <th>Category</th>
-    <td>|</td>
-    <th>Update</th>
   </tr>
   <% @transactions.each do |transaction| %>
   <tr>
@@ -18,7 +16,7 @@
     <td>|</td>
     <td> <%= transaction.tag.type() %> </td>
     <td>|</td>
-    <td> <a href="/cash-quest/<%= transaction.id %>">Update</a> </td>
+    <td> <a href="/cash-quest/<%= transaction.id %>">View</a> </td>
   </tr>
   <% end %>
 </table>
