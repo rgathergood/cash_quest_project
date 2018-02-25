@@ -7,7 +7,7 @@ require_relative( 'models/tag.rb')
 get '/cash-quest' do
   @transactions = Transaction.all()
   @total = Transaction.total()
-  erb( :index )
+  erb(:index)
 end
 
 post '/cash-quest' do
@@ -45,3 +45,9 @@ get '/cash-quest/:id/delete' do
   @transaction.delete()
   erb(:confirmdelete)
 end
+
+# get '/cash-quest' do
+#   @tags = Tag.all()
+#   @total = Tag.total()
+#   erb(:categories)
+# end

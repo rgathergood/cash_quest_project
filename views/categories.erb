@@ -1,0 +1,16 @@
+<h2>Spend by Category</h2>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <td>|</td>
+    <th>Total</th>
+  </tr>
+  <% @tags.each do |tag| %>
+  <tr>
+    <td> <%= tag.type() %> </td>
+    <td>|</td>
+    <td> <%= tag.total() %> </td>
+  </tr>
+  <% end %>
+</table>

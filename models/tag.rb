@@ -37,6 +37,15 @@ class Tag
     return result
   end
 
+  def total()
+    sql = "SELECT SUM(amount) FROM transactions
+    INNER JOIN tags on tags.id = transactions.tag_id
+    WHERE tag_id = $1;"
+    values = [@id]
+    total = SqlRunner.run(sql, values)
+    return total.values[0].first.to_i
+  end
+
   def self.all()
     sql = "SELECT * FROM tags;"
     results = SqlRunner.run(sql)
