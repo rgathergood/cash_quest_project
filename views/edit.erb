@@ -1,0 +1,30 @@
+<form action="/cash-quest/<%= @transaction.id %>" method="post">
+
+  <label for="amount">Amount: </label>
+  <input id="amount" value="<%= @transaction.amount() %>" type="number" name="amount" min="0"/>
+
+  <label for="merchant" type="text" name="merchant">Merchant: </label>
+  <select id="merchant" selected="<%= @transaction.merchant.name %>" name="merchant_id">
+    <% @merchants.each do |merchant| %>
+      <% if merchant.id == @transaction.merchant.id %>
+        <option value=<%= merchant.id %>selected><%= merchant.name %></option>
+      <% else %>
+        <option value=<%= merchant.id %>><%= merchant.name %></option>
+      <% end %>
+    <% end %>
+  </select>
+
+  <label for="tag">Category: </label>
+  <select id="tag" selected="<%= @transaction.tag.type %>" name="tag_id">
+    <% @tags.each do |tag| %>
+      <% if tag.id == @transaction.tag.id %>
+        <option value=<%= tag.id %>selected><%= tag.type %></option>
+      <% else %>
+        <option value=<%= tag.id %>><%= tag.type %></option>
+      <% end %>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Update transaction">
+
+</form>

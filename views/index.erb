@@ -1,4 +1,4 @@
-<p>Transactions</p>
+<h2> Total Spend: <%= @total %> </h2>
 
 <table>
   <tr>
@@ -7,6 +7,8 @@
     <th>Merchant</th>
     <td>|</td>
     <th>Category</th>
+    <td>|</td>
+    <th>Update</th>
   </tr>
   <% @transactions.each do |transaction| %>
   <tr>
@@ -15,6 +17,8 @@
     <td> <%= transaction.merchant.name() %> </td>
     <td>|</td>
     <td> <%= transaction.tag.type() %> </td>
+    <td>|</td>
+    <td> <a href="/cash-quest/<%= transaction.id %>">Update</a> </td>
   </tr>
   <% end %>
 </table>

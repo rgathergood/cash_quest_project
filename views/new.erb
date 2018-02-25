@@ -1,0 +1,22 @@
+<form action="/cash-quest" method="post">
+
+  <label for="amount">Amount: </label>
+  <input id="amount" type="number" name="amount" min="0"/>
+
+  <label for="merchant" type="text" name="merchant">Merchant: </label>
+  <select id="mechant" name="merchant_id">
+    <% @merchants.each do |merchant| %>
+    <option value=<%= merchant.id %>><%= merchant.name %></option>
+    <% end %>
+  </select>
+
+  <label for="tag">Category: </label>
+  <select id="tag" name="tag_id">
+    <% @tags.each do |tag| %>
+    <option value=<%= tag.id %>><%= tag.type %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Add this transaction">
+
+</form>
