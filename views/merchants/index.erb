@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Merchants</th>
+  </tr>
+  <% @merchants.each do |merchant| %>
+  <tr>
+    <td> <%= merchant.name() %> </td>
+    <td>|</td>
+    <td> <a href="/merchants/<%= merchant.id %>">Edit</a> </td>
+  </tr>
+  <% end %>
+</table>
+
+<p> <a href="/merchants/new">Add New Merchant</a> </p>

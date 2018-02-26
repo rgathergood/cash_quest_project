@@ -11,6 +11,10 @@
     <td> <%= tag.type() %> </td>
     <td>|</td>
     <td> <%= tag.total() %> </td>
+    <td>|</td>
+    <td> <a href="/tags/<%= tag.id %>">Edit</a> </td>
   </tr>
   <% end %>
 </table>
+
+<p> <a href="/tags/new">Add New Category</a> </p>

@@ -26,6 +26,13 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
+  def delete()
+    sql = "DELETE FROM merchants
+    WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def tags()
     sql = "SELECT tags.* FROM tags
     INNER JOIN transactions ON tags.id = transactions.tag_id
