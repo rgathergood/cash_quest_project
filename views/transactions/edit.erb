@@ -1,4 +1,4 @@
-<form action="/cash-quest/<%= @transaction.id %>" method="post">
+<form action="/transactions/<%= @transaction.id %>" method="post">
 
   <label for="amount">Amount: </label>
   <input id="amount" value="<%= @transaction.amount() %>" type="number" name="amount" min="0"/>
