@@ -5,8 +5,9 @@ body {
 }
 
 .background {
-  background-image: url("scroll_background.jpg");
+  background-image: url("/images/scroll_background.jpg");
   background-size: cover;
+  height: 100%;
 }
 
 #logo {
@@ -30,7 +31,7 @@ a {
 a:hover {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  cursor: url('cursor.cur'), auto;
+  cursor: url('/images/cursor.cur'), auto;
 }
 
 .content {
@@ -43,6 +44,22 @@ td {
   padding: 0 1em 0 1em;
 }
 
-button :disabled :hover {
-  
+input {
+  float: none;
+
+}
+
+input[type=submit] {
+  display: inline-block;
+  align-items: center;
+}
+
+label {
+  padding-top: 1em;
+  padding-bottom: 0.25em;
+  display: block;
+}
+
+#bottom-links {
+  padding-top: 1em;
 }

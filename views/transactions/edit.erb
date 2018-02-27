@@ -1,3 +1,5 @@
+<h2>Edit Transaction</h2>
+
 <form action="/transactions/<%= @transaction.id %>" method="post">
 
   <label for="amount">Amount: </label>
@@ -28,3 +30,5 @@
   <input type="submit" value="Update transaction">
 
 </form>
+
+<p id="bottom-links" > <a href="/transactions">Return to Transactions</a> </p>

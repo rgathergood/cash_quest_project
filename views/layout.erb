@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1.1">
-    <title>Cash Quest</title>
-  </head>
-  <body class="background">
-<main>
-  <a href="/transactions"><img id="logo" src="/logo.png" alt="Cash Quest"/></a>
-  <nav>
-    <ul>
-      <li> <a href="/transactions">Home</a> </li>
-      <li> <a href="/categories">Categories</a> </li>
-      <li> <a href="/merchants">Merchants</a> </li>
-      <li> <a href="/transactions/new">New Transaction</a> </li>
-    </ul>
-  </nav>
-  <section class = "content">
-    <%= yield %>
-  </section>
-</main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=1.1">
+  <title>Cash Quest</title>
+</head>
+<body class="background">
+  <main>
+    <div class="header">
+      <a href="/transactions"><img id="logo" src="/images/logo.png" alt="Cash Quest"/></a>
+    </div>
+    <nav id="nav">
+      <ul>
+        <li><img src="/images/left_fire.gif"></li>
+        <li> <a href="/transactions">Home</a> </li>
+        <li> <a href="/categories">Categories</a> </li>
+        <li> <a href="/merchants">Merchants</a> </li>
+        <li> <a href="/transactions/new">New Transaction</a> </li>
+        <li><img src="/images/right_fire.gif"></li>
+      </ul>
+    </nav>
+    <section class = "content">
+      <%= yield %>
+    </section>
+  </main>
+</body>
 </html>

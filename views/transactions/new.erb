@@ -1,5 +1,6 @@
 <h2>New Transaction</h2>
 
+<div class="form-inline">
 <form action="/transactions" method="post">
 
   <label for="amount">Amount: </label>
@@ -7,7 +8,7 @@
 
   <label for="merchant" type="text" name="merchant">Merchant: </label>
   <select id="merchant" name="merchant_id" required>
-    <option value="">-Select Merchant-</option>
+    <option value="">- Select Merchant -</option>
     <% @merchants.each do |merchant| %>
     <option value=<%= merchant.id %>><%= merchant.name %></option>
     <% end %>
@@ -15,7 +16,7 @@
 
   <label for="category">Category: </label>
   <select id="category" name="category_id" required>
-    <option value="">-Select Category-</option>
+    <option value="">- Select Category -</option>
     <% @categories.each do |category| %>
     <option value=<%= category.id %>><%= category.type %></option>
     <% end %>
@@ -24,5 +25,6 @@
   <input type="submit" value="Add this transaction">
 
 </form>
+</div>
 
-<p> <a href="/merchants/new">Add New Merchant</a>  | <a href="/categories/new">Add New Category</a></p>
+<p id="bottom-links" > <a href="/merchants/new">Add New Merchant</a>  | <a href="/categories/new">Add New Category</a></p>
