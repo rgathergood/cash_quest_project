@@ -53,6 +53,19 @@ class Tag
     return total.values[0].first.to_i
   end
 
+  def transactions()
+    sql = "SELECT * FROM transactions
+    WHERE tag_id = $1"
+    values = [@id]
+    tags = SqlRunner.run(sql, values)
+    result = tags.map{|tag|Tag.new(tag)}
+    return result
+  end
+
+  def self.check_exists(type)
+    return Tag.find_by_type(type).length != 0
+  end
+
   def self.all()
     sql = "SELECT * FROM tags;"
     results = SqlRunner.run(sql)
@@ -66,6 +79,14 @@ class Tag
     result = SqlRunner.run(sql, values).first
     tag = Tag.new(result)
     return tag
+  end
+
+  def self.find_by_type(type)
+    sql = "SELECT * FROM tags
+    WHERE type = $1"
+    values = [type]
+    result = SqlRunner.run(sql, values)
+    return result.map {|tag| Tag.new(tag)}
   end
 
   def self.delete(id)

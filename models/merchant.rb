@@ -43,6 +43,28 @@ class Merchant
     return result
   end
 
+  def transactions()
+    sql = "SELECT * FROM transactions
+    WHERE merchant_id = $1"
+    values = [@id]
+    transactions = SqlRunner.run(sql, values)
+    result = transactions.map{|transactions|Transaction.new(transactions)}
+    return result
+  end
+
+  def total()
+    sql = "SELECT SUM(amount) FROM transactions
+    INNER JOIN merchants on merchants.id = transactions.merchant_id
+    WHERE merchant_id = $1;"
+    values = [@id]
+    total = SqlRunner.run(sql, values)
+    return total.first["sum"].to_i
+  end
+
+  def self.check_exists(name)
+    return Merchant.find_by_name(name).length != 0
+  end
+
   def self.all()
     sql = "SELECT * FROM merchants;"
     results = SqlRunner.run(sql)
@@ -56,6 +78,14 @@ class Merchant
     result = SqlRunner.run(sql, values).first
     merchant = Merchant.new(result)
     return merchant
+  end
+
+  def self.find_by_name(name)
+    sql = "SELECT * FROM merchants
+    WHERE name = $1"
+    values = [name]
+    result = SqlRunner.run(sql, values)
+    return result.map {|merchant| Merchant.new(merchant)}
   end
 
   def self.delete(id)

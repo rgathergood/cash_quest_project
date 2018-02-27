@@ -6,9 +6,6 @@ body {
 
 .background {
   background-image: url("scroll_background.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -22,16 +19,7 @@ li {
   display: inline;
   padding: 1rem;
   font-weight: bold;
-}
-
-li a {
-  text-decoration: none;
   color: maroon;
-}
-
-li a:hover {
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 a {
@@ -51,15 +39,10 @@ a:hover {
   margin-right: auto;
 }
 
-th {
-  color: maroon;
-}
-
-th:hover {
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
 td {
   padding: 0 1em 0 1em;
+}
+
+button :disabled :hover {
+  
 }

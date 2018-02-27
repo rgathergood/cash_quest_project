@@ -13,6 +13,12 @@
     <td> <%= tag.total() %> </td>
     <td>|</td>
     <td> <a href="/tags/<%= tag.id %>">Edit</a> </td>
+    <td>|</td>
+    <td>
+      <form class="" action="/tags/<%= tag.id %>/delete" method="post">
+        <input type="submit" value="Delete" <%= "disabled" if tag.transactions().length > 0 %> />
+      </form>
+    </td>
   </tr>
   <% end %>
 </table>

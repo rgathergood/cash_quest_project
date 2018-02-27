@@ -1,12 +1,24 @@
+<h2>Spend by Merchant</h2>
+
 <table>
   <tr>
     <th>Merchants</th>
+    <td>|</td>
+    <th>Total</th>
   </tr>
   <% @merchants.each do |merchant| %>
   <tr>
     <td> <%= merchant.name() %> </td>
     <td>|</td>
+    <td> <%= merchant.total() %> </td>
+    <td>|</td>
     <td> <a href="/merchants/<%= merchant.id %>">Edit</a> </td>
+    <td>|</td>
+    <td>
+      <form class="" action="/merchants/<%= merchant.id %>/delete" method="post">
+        <input type="submit" value="Delete" <%= "disabled" if merchant.transactions().length > 0 %> />
+      </form>
+    </td>
   </tr>
   <% end %>
 </table>

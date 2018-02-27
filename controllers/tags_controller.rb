@@ -12,9 +12,13 @@ get '/tags/new' do
 end
 
 post '/tags' do
-  @tag = Tag.new(params)
-  @tag.save()
-  erb(:"tags/create")
+  if(!Tag.check_exists(params["type"]))
+    @tag = Tag.new(params)
+    @tag.save()
+    erb(:"tags/create")
+  else
+    erb(:"tags/create_error")
+  end
 end
 
 get '/tags/:id' do
@@ -28,8 +32,8 @@ post '/tags/:id' do
   redirect to "/tags"
 end
 
-get '/tags/:id/delete' do
-  @tag = Tag.find( params[:id].to_i )
-  @tag.delete()
-  erb(:"tags/confirmdelete")
+post '/tags/:id/delete' do
+  tag = Tag.find( params[:id].to_i )
+  tag.delete()
+  erb(:"tags/confirm_delete")
 end
