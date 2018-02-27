@@ -21,7 +21,7 @@ post '/merchants' do
   end
 end
 
-get '/merchants/:id' do
+post '/merchants/:id' do
   @merchant = Merchant.find(params[:id].to_i)
   erb(:"merchants/edit")
 end

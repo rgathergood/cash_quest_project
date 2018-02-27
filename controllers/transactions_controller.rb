@@ -2,7 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/transaction.rb' )
 require_relative( '../models/merchant.rb')
-require_relative( '../models/tag.rb')
+require_relative( '../models/category.rb')
 
 get '/transactions' do
   @transactions = Transaction.all()
@@ -18,7 +18,7 @@ end
 
 get '/transactions/new' do
   @merchants = Merchant.all()
-  @tags = Tag.all()
+  @categories = Category.all()
   erb(:"transactions/new")
 end
 
@@ -27,9 +27,9 @@ get '/transactions/:id' do
   erb(:"transactions/show")
 end
 
-get '/transactions/:id/edit' do
+post '/transactions/:id/edit' do
   @merchants = Merchant.all()
-  @tags = Tag.all()
+  @categories = Category.all()
   @transaction = Transaction.find(params[:id].to_i)
   erb(:"transactions/edit")
 end
@@ -40,7 +40,7 @@ post '/transactions/:id' do
   redirect to "/transactions/#{params['id']}"
 end
 
-get '/transactions/:id/delete' do
+post '/transactions/:id/delete' do
   @transaction = Transaction.find( params[:id].to_i )
   @transaction.delete()
   erb(:"transactions/confirmdelete")

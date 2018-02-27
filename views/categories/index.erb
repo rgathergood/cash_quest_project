@@ -1,0 +1,30 @@
+<h2>Spend by Category</h2>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <td>|</td>
+    <th>Total</th>
+  </tr>
+  <% @categories.each do |category| %>
+  <tr>
+    <td> <%= category.type() %> </td>
+    <td>|</td>
+    <td> <%= category.total() %> </td>
+    <td>|</td>
+    <td>
+    <form action="/categories/<%= category.id %>" method="get">
+        <input type="submit" value="Edit">
+    </form>
+  </td>
+    <td>|</td>
+    <td>
+      <form class="" action="/categories/<%= category.id %>/delete" method="post">
+        <input type="submit" value="Delete" <%= "disabled" if category.transactions().length > 0 %> />
+      </form>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<p> <a href="/categories/new">Add New Category</a> </p>

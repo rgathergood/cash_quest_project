@@ -6,7 +6,7 @@
     <td>|</td>
     <th> <a href="/merchants">Merchant</a> </th>
     <td>|</td>
-    <th> <a href="/tags">Category</a> </th>
+    <th> <a href="/categories">Category</a> </th>
   </tr>
   <% @transactions.each do |transaction| %>
   <tr>
@@ -14,7 +14,7 @@
     <td>|</td>
     <td> <%= transaction.merchant.name() %> </td>
     <td>|</td>
-    <td> <%= transaction.tag.type() %> </td>
+    <td> <%= transaction.category.type() %> </td>
     <td>|</td>
     <td> <a href="/transactions/<%= transaction.id %>">View</a> </td>
   </tr>

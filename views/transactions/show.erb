@@ -1,6 +1,11 @@
 <p>Amount: <%= @transaction.amount %> </p>
 <p>Merchant: <%= @transaction.merchant.name %> </p>
-<p>Category: <%= @transaction.tag.type %> </p>
+<p>Category: <%= @transaction.category.type %> </p>
 
-<p> <a href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a> </p>
-<p> <a href="/transactions/<%= @transaction.id %>/delete">Delete Transaction</a> </p>
+<form action="/transactions/<%= @transaction.id %>/edit" method="post">
+    <input type="submit" value="Edit">
+</form>
+
+<form action="/transactions/<%= @transaction.id %>/delete" method="post">
+    <input type="submit" value="Delete">
+</form>

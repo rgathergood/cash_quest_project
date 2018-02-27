@@ -33,13 +33,13 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
-  def tags()
-    sql = "SELECT tags.* FROM tags
-    INNER JOIN transactions ON tags.id = transactions.tag_id
-    WHERE tag_id = $1;"
+  def categories()
+    sql = "SELECT categories.* FROM categories
+    INNER JOIN transactions ON categories.id = transactions.category_id
+    WHERE category_id = $1;"
     values = [@id]
-    tags = SqlRunner.run(sql, values)
-    result = tags.map{|tag|Tag.new(tag)}
+    categories = SqlRunner.run(sql, values)
+    result = categories.map{|category|category.new(category)}
     return result
   end
 

@@ -2,13 +2,13 @@ require_relative( '../db/sql_runner' )
 
 class Transaction
 
-  attr_reader(:amount, :merchant_id, :tag_id, :id)
+  attr_reader(:amount, :merchant_id, :category_id, :id)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @amount = options['amount'].to_i
     @merchant_id = options['merchant_id'].to_i
-    @tag_id = options['tag_id'].to_i
+    @category_id = options['category_id'].to_i
   end
 
   def save()
@@ -16,14 +16,14 @@ class Transaction
     (
     amount,
     merchant_id,
-    tag_id
+    category_id
     )
     VALUES
     (
       $1, $2, $3
     )
       RETURNING id;"
-      values = [@amount, @merchant_id, @tag_id]
+      values = [@amount, @merchant_id, @category_id]
       results = SqlRunner.run(sql, values)
       @id = results.first()['id'].to_i
   end
@@ -31,9 +31,9 @@ class Transaction
   def update()
     sql = "UPDATE transactions
     SET
-    (amount, merchant_id, tag_id) = ($1, $2, $3)
+    (amount, merchant_id, category_id) = ($1, $2, $3)
     WHERE id = $4;"
-    values = [@amount, @merchant_id, @tag_id, @id]
+    values = [@amount, @merchant_id, @category_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -52,12 +52,12 @@ class Transaction
     return Merchant.new(results.first)
   end
 
-  def tag()
-    sql = "SELECT * FROM tags
+  def category()
+    sql = "SELECT * FROM categories
     WHERE id =$1"
-    values = [@tag_id]
+    values = [@category_id]
     results = SqlRunner.run(sql, values)
-    return Tag.new(results.first)
+    return Category.new(results.first)
   end
 
   def self.all()

@@ -14,13 +14,13 @@
     <% end %>
   </select>
 
-  <label for="tag">Category: </label>
-  <select id="tag" selected="<%= @transaction.tag.type %>" name="tag_id">
-    <% @tags.each do |tag| %>
-      <% if tag.id == @transaction.tag.id %>
-        <option value=<%= tag.id %>selected><%= tag.type %></option>
+  <label for="category">Category: </label>
+  <select id="category" selected="<%= @transaction.category.type %>" name="category_id">
+    <% @categories.each do |category| %>
+      <% if category.id == @transaction.category.id %>
+        <option value=<%= category.id %>selected><%= category.type %></option>
       <% else %>
-        <option value=<%= tag.id %>><%= tag.type %></option>
+        <option value=<%= category.id %>><%= category.type %></option>
       <% end %>
     <% end %>
   </select>
