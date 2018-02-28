@@ -5,6 +5,9 @@
   <label for="amount">Amount: </label>
   <input id="amount" value="<%= @transaction.amount() %>" type="number" name="amount" min="0"/>
 
+  <label for="date">Date: </label>
+  <input id="date" value="<%= @transaction.date() %>" type="date" name="date" />
+
   <label for="merchant" type="text" name="merchant">Merchant: </label>
   <select id="merchant" selected="<%= @transaction.merchant.name %>" name="merchant_id">
     <% @merchants.each do |merchant| %>

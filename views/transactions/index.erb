@@ -4,6 +4,8 @@
   <tr>
     <th>Amount</th>
     <td>|</td>
+    <th>Date</th>
+    <td>|</td>
     <th> <a href="/merchants">Merchant</a> </th>
     <td>|</td>
     <th> <a href="/categories">Category</a> </th>
@@ -11,6 +13,8 @@
   <% @transactions.each do |transaction| %>
   <tr>
     <td> <%= transaction.amount() %> </td>
+    <td>|</td>
+    <td> <%= transaction.uk_date() %> </td>
     <td>|</td>
     <td> <%= transaction.merchant.name() %> </td>
     <td>|</td>

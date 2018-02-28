@@ -39,6 +39,9 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
 }
+th {
+  text-decoration: underline;
+}
 
 td {
   padding: 0 1em 0 1em;
@@ -46,12 +49,31 @@ td {
 
 input {
   float: none;
+  border: 2px solid maroon;
+  border-radius: 5px;
+
 
 }
 
 input[type=submit] {
   display: inline-block;
   align-items: center;
+  border: 2px solid maroon;
+  border-radius: 5px;
+  color: maroon;
+}
+
+input[type=submit]:hover {
+  display: inline-block;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: maroon;
+  color: white;
+}
+
+select {
+  border: 2px solid maroon;
 }
 
 label {
