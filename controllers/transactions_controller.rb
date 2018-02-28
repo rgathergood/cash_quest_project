@@ -27,6 +27,12 @@ get '/transactions/:id' do
   erb(:"transactions/show")
 end
 
+get '/transactions/month/:month' do
+  @transactions = Transaction.all()
+  @total = Transaction.month_total(params[:month])
+  erb(:"transactions/month")
+end
+
 post '/transactions/:id/edit' do
   @merchants = Merchant.all()
   @categories = Category.all()
