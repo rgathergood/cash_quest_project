@@ -32,4 +32,5 @@ I really enjoyed creating my first project, and managed to complete the MVP with
 - User Login
 
 
+
 For the sake of posterity I will not continue to work on Cash Quest in this repo. It will remain an insight into my capabilities at this point in time (02/03/2018).
