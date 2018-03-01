@@ -18,11 +18,11 @@ I added the following extensions to Cash Quest:
 - Added total spend by month functionality
 
 
-Reflection
+Reflection:
 I really enjoyed creating my first project, and managed to complete the MVP with no major issues. I feel very comfortable with HTML & CSS, I'm happy with SQL, but could spend some more time on Ruby syntax (as this is where the majority of my issues stemmed from). Whilst my inital project plans were adequate; I feel if I planned my extensions (and their integration) better this would have led to less time consuming issues. Overall, this was an intresting and challenging project where I learned a great deal.
 
 
-Potential Future Extensions
+Potential Future Extensions:
 - Add a budget with a limit 
 - Add merchant profile pages
 - Add merchant map
