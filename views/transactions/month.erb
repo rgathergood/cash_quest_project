@@ -1,5 +1,6 @@
 <% @transactions.each do |transaction| %>
 <h2>Total transactions for Month: <%= transaction.month() %></h2>
+<% break  %>
 <% end %>
 
 <h3> Monthly Spend: <%= @total %> </h3>

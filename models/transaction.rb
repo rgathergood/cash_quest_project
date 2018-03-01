@@ -106,15 +106,6 @@ class Transaction
     SqlRunner.run(sql)
   end
 
-  def self.find(id)
-    sql = "SELECT * FROM transactions
-    WHERE id = $1;"
-    values = [id]
-    result = SqlRunner.run(sql, values).first
-    transaction = Transaction.new(result)
-    return transaction
-  end
-
   def uk_date()
     return Date.parse(@date).strftime("%d/%m/%Y")
   end
