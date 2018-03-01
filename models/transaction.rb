@@ -47,8 +47,16 @@ class Transaction
   end
 
   def self.month_total(month)
+    sql = "SELECT SUM(amount) FROM transactions
+    WHERE EXTRACT(month FROM date) = $1;"
+    values = [month]
+    transactions = SqlRunner.run(sql, values)
+    return transactions.values[0].first.to_i
+  end
+
+  def self.month(month)
     sql = "SELECT * FROM transactions
-    WHERE EXTRACT(month FROM date) = $1"
+    WHERE EXTRACT(month FROM date) = $1;"
     values = [month]
     transactions = SqlRunner.run(sql, values)
     result = transactions.map{|transaction| Transaction.new(transaction)}

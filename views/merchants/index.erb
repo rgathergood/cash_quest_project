@@ -13,13 +13,13 @@
     <td> <%= merchant.total() %> </td>
     <td>|</td>
     <td>
-    <form action="/merchants/<%= merchant.id %>" method="post">
+    <form action="/merchants/<%= merchant.id %>" method="get">
         <input type="submit" value="Edit">
     </form>
   </td>
     <td>|</td>
     <td>
-      <form action="/merchants/<%= merchant.id %>/delete" method="post">
+      <form action="/merchants/<%= merchant.id %>/delete" method="get">
         <input type="submit" value="Delete" <%= "disabled" if merchant.transactions().length > 0 %> />
       </form>
     </td>

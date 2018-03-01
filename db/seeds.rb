@@ -27,10 +27,10 @@ category2.save()
 category3.save()
 category4.save()
 
-transaction1 = Transaction.new({"amount" => 25, "date" => '2018-02-28', "merchant_id" => merchant1.id, "category_id" => category1.id})
+transaction1 = Transaction.new({"amount" => 25, "date" => '2018-01-28', "merchant_id" => merchant1.id, "category_id" => category1.id})
 transaction2 = Transaction.new({"amount" => 60, "date" => '2018-02-24', "merchant_id" => merchant2.id, "category_id" => category2.id})
 transaction3 = Transaction.new({"amount" => 32, "date" => '2018-02-26', "merchant_id" => merchant3.id, "category_id" => category3.id})
-transaction4 = Transaction.new({"amount" => 124, "date" => '2018-02-28', "merchant_id" => merchant4.id, "category_id" => category4.id})
+transaction4 = Transaction.new({"amount" => 124, "date" => '2018-03-28', "merchant_id" => merchant4.id, "category_id" => category4.id})
 
 transaction1.save()
 transaction2.save()

@@ -1,4 +1,6 @@
-<h2>Total transactions for <%= @transactions %>: </h2>
+<% @transactions.each do |transaction| %>
+<h2>Total transactions for Month: <%= transaction.month() %></h2>
+<% end %>
 
 <h3> Monthly Spend: <%= @total %> </h3>
 
@@ -26,3 +28,5 @@
   </tr>
   <% end %>
 </table>
+
+<p id="bottom-links" > <a href="/transactions/month_list">Return to Months</a> </p>

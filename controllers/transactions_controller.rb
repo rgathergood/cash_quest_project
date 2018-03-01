@@ -22,14 +22,18 @@ get '/transactions/new' do
   erb(:"transactions/new")
 end
 
+get '/transactions/month_list' do
+  erb(:"transactions/month_list")
+end
+
 get '/transactions/:id' do
   @transaction = Transaction.find(params[:id].to_i)
   erb(:"transactions/show")
 end
 
 get '/transactions/month/:month' do
-  @transactions = Transaction.all()
   @total = Transaction.month_total(params[:month])
+  @transactions = Transaction.month(params[:month])
   erb(:"transactions/month")
 end
 
