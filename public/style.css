@@ -18,7 +18,7 @@ body {
 
 li {
   display: inline;
-  padding: 0.5rem;
+  padding: 1rem;
   font-weight: bold;
   color: maroon;
 }
@@ -44,13 +44,13 @@ th {
 }
 
 td {
-  padding: 0 1em 0 1em;
+  padding: 0 0.5em 0 0.5em;
 }
 
 input {
   float: none;
   border: 2px solid maroon;
-  border-radius: 5px;
+  border-radius: 2px;
 
 
 }

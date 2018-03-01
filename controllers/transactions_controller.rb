@@ -49,5 +49,5 @@ end
 post '/transactions/:id/delete' do
   @transaction = Transaction.find( params[:id].to_i )
   @transaction.delete()
-  erb(:"transactions/confirmdelete")
+  erb(:"transactions/confirm_delete")
 end
