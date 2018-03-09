@@ -33,6 +33,6 @@ I really enjoyed creating my first project, and managed to complete the MVP with
 
 
 
-For the sake of posterity I will not continue to work on Cash Quest in this repo. It will remain an insight into my capabilities at this point in time (02/03/2018).
+For the sake of posterity I will not continue to work on Cash Quest in this repo. It will remain an insight into my capabilities at this point in time (09/03/2018).
 
 ![screenshot](https://github.com/rgathergood/cash_quest_project/blob/master/public/images/cash_quest_home_screenshot.png)
