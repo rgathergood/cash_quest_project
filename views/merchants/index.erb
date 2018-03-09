@@ -19,7 +19,7 @@
   </td>
     <td>|</td>
     <td>
-      <form action="/merchants/<%= merchant.id %>/delete" method="get">
+      <form action="/merchants/<%= merchant.id %>/delete" method="post">
         <input type="submit" value="Delete" <%= "disabled" if merchant.transactions().length > 0 %> />
       </form>
     </td>

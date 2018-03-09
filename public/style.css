@@ -51,8 +51,15 @@ input {
   float: none;
   border: 2px solid maroon;
   border-radius: 2px;
+}
 
-
+input[type=submit]:disabled {
+  display: inline-block;
+  align-items: center;
+  border: 2px solid maroon;
+  border-radius: 5px;
+  color: black;
+  background: gray;
 }
 
 input[type=submit] {
